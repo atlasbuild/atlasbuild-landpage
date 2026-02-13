@@ -14,10 +14,12 @@ import {
 } from "@/components/ui/sheet";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { useHasMounted } from "@/hooks/use-has-mounted";
 
 export function Navbar() {
   const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
+  const mounted = useHasMounted();
 
   const navItems = [
     { href: "#expertise", label: t("features") },
@@ -54,35 +56,41 @@ export function Navbar() {
         {/* Mobile Menu */}
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="sm">
-                <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="glass-strong w-[280px]">
-              <SheetHeader>
-                <SheetTitle className="text-gradient-purple-cyan">
-                  AtlasBuild
-                </SheetTitle>
-              </SheetHeader>
-              <div className="mt-8 flex flex-col gap-4">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-                <div className="border-t border-white/10 pt-4">
-                  <LanguageSelector />
+          {mounted ? (
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="sm">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="glass-strong w-[280px]">
+                <SheetHeader>
+                  <SheetTitle className="text-gradient-purple-cyan">
+                    AtlasBuild
+                  </SheetTitle>
+                </SheetHeader>
+                <div className="mt-8 flex flex-col gap-4">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                  <div className="border-t border-white/10 pt-4">
+                    <LanguageSelector />
+                  </div>
                 </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetContent>
+            </Sheet>
+          ) : (
+            <Button variant="ghost" size="sm" aria-hidden>
+              <Menu className="h-5 w-5" />
+            </Button>
+          )}
         </div>
       </nav>
     </header>
