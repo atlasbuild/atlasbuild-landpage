@@ -33,12 +33,8 @@ export function LanguageSelector() {
   const currentLanguage = languages.find((lang) => lang.code === locale);
 
   return (
-    <Select
-      value={locale}
-      onValueChange={handleLanguageChange}
-      suppressHydrationWarning
-    >
-      <SelectTrigger className="glass w-[140px]" suppressHydrationWarning>
+    <Select value={locale} onValueChange={handleLanguageChange}>
+      <SelectTrigger className="glass w-[140px]">
         <div className="flex items-center gap-2">
           <Languages className="h-4 w-4" />
           <SelectValue>
