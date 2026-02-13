@@ -1,5 +1,5 @@
 import createMiddleware from "next-intl/middleware";
-import { locales } from "./i18n/request";
+import { locales } from "./i18n";
 
 // Simple i18n middleware - no authentication needed for landing page
 export default createMiddleware({

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales } from "@/i18n/request";
+import { locales } from "@/i18n";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
