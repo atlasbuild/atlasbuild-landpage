@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "title": "AtlasBuild - Engineering the Future: Blockchain, AI, and High-Performance Systems",
+    "description": "From intelligent automation with RAG to Blockchain security. We build robust, scalable, custom-made solutions for your business.",
+    "keywords": "blockchain, blockchain development, smart contracts, NFT, generative AI, RAG, artificial intelligence, payment systems, API integration, n8n automation, software development, software factory"
+  },
+  "nav": {
+    "features": "Expertise",
+    "process": "Process",
+    "contact": "Contact"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "backHome": "Back to Home"
+  },
+  "hero": {
+    "badge": "🚀 Elite Software Factory",
+    "headline": "Engineering the Future",
+    "headlineGradient": "Blockchain, AI, and High-Performance Systems",
+    "subheadline": "From intelligent automation with RAG to Blockchain security. We build robust, scalable, custom-made solutions for your business.",
+    "ctaPrimary": "Talk to a Specialist",
+    "ctaSecondary": "View Our Projects"
+  },
+  "expertise": {
+    "title": "Our Technical Expertise",
+    "subtitle": "We master the most advanced technologies on the market",
+    "cards": [
+      {
+        "title": "Blockchain & NFTs",
+        "description": "Smart contracts, asset tokenization, and decentralized platforms with Solidity, Web3, and Polygon."
+      },
+      {
+        "title": "Payment Systems",
+        "description": "Complete integration with gateways, PIX, digital wallets, and high-availability white-label solutions."
+      },
+      {
+        "title": "Custom Integrations",
+        "description": "Robust APIs, webhooks, data synchronization, and complex automations between legacy and modern systems."
+      },
+      {
+        "title": "End-to-End Systems",
+        "description": "From architecture to deployment. Scalable microservices, CI/CD, 24/7 monitoring, and cloud-native infrastructure."
+      }
+    ]
+  },
+  "tech": {
+    "title": "Cutting-Edge AI & Automation",
+    "subtitle": "We transform complex processes into intelligent workflows",
+    "cards": [
+      {
+        "title": "Generative AI",
+        "description": "Custom LLM implementations (GPT-4, Claude, LLaMA) for customer service, data analysis, and content generation."
+      },
+      {
+        "title": "RAG (Retrieval-Augmented Generation)",
+        "description": "Private knowledge bases with embeddings and vector search. AI that learns from your internal documents."
+      },
+      {
+        "title": "n8n Automation",
+        "description": "Complex no-code workflows. Integrations between Slack, CRM, ERP, email, databases, and external APIs."
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Work Process",
+    "subtitle": "From idea to launch, with full transparency",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Discovery & Alignment",
+        "description": "We deeply understand your business challenge, technical requirements, and strategic objectives."
+      },
+      {
+        "number": "02",
+        "title": "Architecture & Prototyping",
+        "description": "We design the ideal solution: tech stack, data flows, wireframes, and accurate estimates."
+      },
+      {
+        "number": "03",
+        "title": "Agile Development",
+        "description": "2-week sprints with continuous delivery. Rigorous code review, automated testing, and CI/CD from day 1."
+      },
+      {
+        "number": "04",
+        "title": "Deployment & Support",
+        "description": "Scalable cloud infrastructure, real-time monitoring, and specialized technical support post-launch."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let's Build Something Amazing Together",
+    "subtitle": "Tell us about your project and receive a personalized proposal",
+    "form": {
+      "name": "Full name",
+      "namePlaceholder": "Your name",
+      "email": "Professional email",
+      "emailPlaceholder": "your@email.com",
+      "company": "Company",
+      "companyPlaceholder": "Your company name",
+      "phone": "Phone / WhatsApp (optional)",
+      "phonePlaceholder": "+1 (555) 123-4567",
+      "description": "Describe your project or need",
+      "descriptionPlaceholder": "Tell us about your technical challenge, objectives, and timelines...",
+      "submit": "Send Proposal",
+      "submitting": "Sending...",
+      "success": "✓ Message sent! We'll get back to you within 24h.",
+      "error": "Error sending message. Please try again."
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "nameMin": "Name must be at least 2 characters",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email",
+      "companyRequired": "Company is required",
+      "companyMin": "Company name must be at least 2 characters",
+      "descriptionRequired": "Description is required",
+      "descriptionMin": "Description must be at least 10 characters",
+      "descriptionMax": "Description must be at most 1000 characters",
+      "phoneMin": "Phone must be at least 10 digits",
+      "phoneMax": "Phone must be at most 20 digits"
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "About",
+      "description": "Software factory specialized in Blockchain, AI, and high-performance systems."
+    },
+    "services": {
+      "title": "Services",
+      "blockchain": "Blockchain & Web3",
+      "ai": "AI & Machine Learning",
+      "payments": "Payment Systems",
+      "integrations": "Integrations",
+      "automation": "Automation"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "process": "Process",
+      "contact": "Contact",
+      "careers": "Careers"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy",
+      "terms": "Terms of Use"
+    },
+    "copyright": "© 2026 AtlasBuild. All rights reserved."
+  }
+}

@@ -1,28 +1,14 @@
-import { NextRequest, NextResponse } from "next/server";
-import { getSessionCookie } from "better-auth/cookies";
+import createMiddleware from "next-intl/middleware";
+import { locales } from "./i18n/request";
 
-const protectedRoutes = ["/dashboard"];
-const authRoutes = ["/login", "/signup"];
-
-export function middleware(request: NextRequest) {
-  const sessionCookie = getSessionCookie(request);
-  const { pathname } = request.nextUrl;
-
-  const isProtected = protectedRoutes.some((route) =>
-    pathname.startsWith(route),
-  );
-  if (isProtected && !sessionCookie) {
-    return NextResponse.redirect(new URL("/login", request.url));
-  }
-
-  const isAuthRoute = authRoutes.some((route) => pathname.startsWith(route));
-  if (isAuthRoute && sessionCookie) {
-    return NextResponse.redirect(new URL("/dashboard", request.url));
-  }
-
-  return NextResponse.next();
-}
+// Simple i18n middleware - no authentication needed for landing page
+export default createMiddleware({
+  locales,
+  defaultLocale: "en",
+  localeDetection: true,
+  localePrefix: "always",
+});
 
 export const config = {
-  matcher: ["/dashboard/:path*", "/login", "/signup"],
+  matcher: ["/((?!_next|_vercel|.*\\..*).*)", "/(pt|en)/:path*"],
 };

@@ -1,260 +1,256 @@
-# Boilerplate Frontend
+# AtlasBuild - Elite Software Factory Landing Page
 
-Next.js boilerplate with authentication, UI components, testing, and quality tooling ready to go.
+Landing page profissional para fábrica de software especializada em Blockchain, IA e sistemas de alta performance. Desenvolvida com Next.js 16, Tailwind CSS v4 e next-intl para suporte bilíngue (PT/EN).
 
-## Tech Stack
+## 🚀 Stack Técnica
 
-| Technology                                           | Version | Purpose                                             |
-| ---------------------------------------------------- | ------- | --------------------------------------------------- |
-| [Next.js](https://nextjs.org)                        | 16.x    | React framework (App Router, Turbopack)             |
-| [TypeScript](https://typescriptlang.org)             | 5.x     | Type safety                                         |
-| [Tailwind CSS](https://tailwindcss.com)              | 4.x     | Utility-first CSS (OKLCH colors, CSS-first config)  |
-| [shadcn/ui](https://ui.shadcn.com)                   | latest  | UI components (Button, Input, Card, Label)          |
-| [Better Auth](https://better-auth.com)               | 1.x     | Authentication (email/password, session management) |
-| [PostgreSQL](https://postgresql.org)                 | -       | Database for auth sessions and users                |
-| [Vitest](https://vitest.dev)                         | 4.x     | Unit testing                                        |
-| [React Testing Library](https://testing-library.com) | 16.x    | Component testing                                   |
-| [Playwright](https://playwright.dev)                 | 1.x     | E2E testing                                         |
-| [ESLint](https://eslint.org)                         | 9.x     | Linting (flat config)                               |
-| [Prettier](https://prettier.io)                      | 3.x     | Code formatting                                     |
-| [Husky](https://typicode.github.io/husky)            | 9.x     | Git hooks                                           |
-| [Commitlint](https://commitlint.js.org)              | 20.x    | Conventional commits                                |
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Tailwind CSS v4 (OKLCH colors)
+- **UI Components**: shadcn/ui (Radix UI)
+- **Animations**: Framer Motion
+- **i18n**: next-intl
+- **Forms**: React Hook Form + Zod
+- **Email**: Resend + React Email
+- **Rate Limiting**: Upstash Redis
+- **Analytics**: Vercel Analytics + Speed Insights
+- **TypeScript**: Strict mode enabled
 
-## Quick Start
+## 🎨 Design
 
-### Prerequisites
+- **Paleta Ultra-Dark**: Fundo #0D0D12 inspirado em reflect.app
+- **Glassmorphism**: Cards com backdrop-blur e transparência
+- **Gradientes**: Purple (#8B5CF6) → Blue (#3B82F6) → Cyan (#06B6D4)
+- **Glow Effects**: Box-shadow suave nos CTAs e ícones
+- **Typography**: Geist Sans + Geist Mono
 
-- Node.js 18+
-- pnpm 9+
-- PostgreSQL running locally (or remotely)
+## 📋 Seções da Landing Page
 
-### 1. Install dependencies
+1. **Hero**: Headline impactante + CTAs com glow effects
+2. **Expertise Grid**: 4 cards (Blockchain, Payments, Integrações, End-to-End)
+3. **Diferencial Tech**: IA Generativa, RAG, n8n Automation
+4. **Processo**: Timeline com 4 etapas (Discovery → Deploy)
+5. **Formulário de Contato**: Validação Zod + Rate limiting + Campo WhatsApp
+
+## 🌐 Funcionalidades i18n
+
+- Detecção automática de idioma via `Accept-Language` header
+- PT-BR ou PT → Português
+- Demais idiomas → English
+- Seletor manual de idioma no navbar
+- URLs com prefixo de locale: `/pt/...` e `/en/...`
+
+## 🔧 Configuração
+
+### 1. Clonar e Instalar
 
 ```bash
+git clone <repository-url>
+cd atlasbuild-landpage
 pnpm install
 ```
 
-### 2. Configure environment
+### 2. Configurar Variáveis de Ambiente
+
+Copie `.env.example` para `.env.local`:
 
 ```bash
-cp .env.example .env
+cp .env.example .env.local
 ```
 
-Edit `.env` with your values:
+Preencha as variáveis obrigatórias:
 
 ```env
-BETTER_AUTH_SECRET=<generate with: openssl rand -base64 32>
-BETTER_AUTH_URL=http://localhost:3000
-DATABASE_URL=postgresql://user:password@localhost:5432/boilerplate_dev
+# App
+NEXT_PUBLIC_APP_URL=http://localhost:3002
+
+# Resend (para formulário de contato)
+RESEND_API_KEY=re_xxxxxxxxxxxxx
+RESEND_FROM_EMAIL=onboarding@resend.dev  # Para testes use este
+RESEND_TO_EMAILS=seu-email@gmail.com     # Seu email para receber contatos
+
+# Upstash (rate limiting)
+UPSTASH_REDIS_REST_URL=https://xxx.upstash.io
+UPSTASH_REDIS_REST_TOKEN=AxxxxxxxxxxxQ==
 ```
 
-### 3. Create the database
-
-```bash
-createdb boilerplate_dev
-```
-
-Or via psql:
-
-```sql
-CREATE DATABASE boilerplate_dev;
-```
-
-### 4. Run Better Auth migrations
-
-This creates the required tables (`user`, `session`, `account`, `verification`):
-
-```bash
-pnpm dlx @better-auth/cli migrate
-```
-
-### 5. Start development server
+### 3. Rodar em Desenvolvimento
 
 ```bash
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Acesse http://localhost:3002
 
-## Available Scripts
+## 📧 Configurar Resend
 
-| Script               | Command                | Description                     |
-| -------------------- | ---------------------- | ------------------------------- |
-| `pnpm dev`           | `next dev --turbopack` | Start dev server with Turbopack |
-| `pnpm build`         | `next build`           | Production build                |
-| `pnpm start`         | `next start`           | Start production server         |
-| `pnpm lint`          | `eslint`               | Run ESLint                      |
-| `pnpm format`        | `prettier --write`     | Format source files             |
-| `pnpm test`          | `vitest`               | Run unit tests (watch mode)     |
-| `pnpm test -- --run` | `vitest --run`         | Run unit tests (single run)     |
-| `pnpm test:e2e`      | `playwright test`      | Run E2E tests                   |
+### Para Desenvolvimento/Testes
 
-## Project Structure
+Use o email de teste da Resend:
+
+```env
+RESEND_FROM_EMAIL=onboarding@resend.dev
+RESEND_TO_EMAILS=seu-email@gmail.com
+```
+
+⚠️ **Importante**: Com `onboarding@resend.dev`, você só pode enviar para o email cadastrado na sua conta Resend.
+
+### Para Produção
+
+1. Criar conta em [resend.com](https://resend.com)
+2. Adicionar e verificar domínio (ex: atlasbuild.com)
+3. Gerar API Key
+4. Adicionar em `RESEND_API_KEY`
+5. Configurar `RESEND_FROM_EMAIL` com email verificado (ex: contato@atlasbuild.com)
+6. Adicionar destinatários em `RESEND_TO_EMAILS` (separados por vírgula)
+
+## 🛡️ Configurar Upstash Redis
+
+1. Criar conta em [upstash.com](https://upstash.com)
+2. Criar novo Redis database
+3. Copiar `UPSTASH_REDIS_REST_URL` e `UPSTASH_REDIS_REST_TOKEN`
+4. Adicionar em `.env.local`
+
+## 🎯 SEO
+
+- **Metadata**: Títulos e descrições bilíngues
+- **OpenGraph**: Imagens dinâmicas geradas via Vercel OG
+- **Twitter Cards**: Configurado para summary_large_image
+- **JSON-LD**: Schema.org Organization + Services
+- **Sitemap**: Gerado dinamicamente com alternates de idioma
+- **Robots.txt**: Configurado para permitir crawling
+
+## 📱 Responsividade
+
+- **Mobile-first**: Breakpoints 375px, 768px, 1440px
+- **Menu Mobile**: Sheet com navegação completa
+- **Grids Responsivos**: 1 col (mobile) → 2 cols (tablet) → 4 cols (desktop)
+- **Timeline**: Scroll horizontal em mobile
+
+## 🧪 Rate Limiting
+
+- **Formulário de Contato**: 3 envios por hora por IP
+- **Tecnologia**: Upstash Redis com sliding window
+- **Mensagens**: Feedback claro sobre limite excedido
+
+## 🚀 Deploy
+
+### Vercel (Recomendado)
+
+```bash
+# Instalar Vercel CLI
+npm install -g vercel
+
+# Deploy
+vercel
+```
+
+Configurar variáveis de ambiente no dashboard da Vercel.
+
+### Outras Plataformas
+
+O projeto é compatível com qualquer plataforma que suporte Next.js 16+:
+
+- Netlify
+- Railway
+- Fly.io
+- AWS Amplify
+
+## 📦 Scripts Disponíveis
+
+```bash
+pnpm dev          # Desenvolvimento (porta 3002)
+pnpm build        # Build de produção
+pnpm start        # Servidor de produção
+pnpm lint         # ESLint
+pnpm format       # Prettier
+pnpm test         # Vitest
+pnpm test:e2e     # Playwright
+```
+
+## 🎨 Customização
+
+### Cores
+
+Edite [src/app/[locale]/globals.css](src/app/[locale]/globals.css):
+
+```css
+.dark {
+  --background: oklch(0.05 0.005 285); /* Ultra-dark */
+  --primary: oklch(0.627 0.265 303.9); /* Purple */
+  /* ... */
+}
+```
+
+### Copy
+
+Edite os dicionários:
+
+- [src/dictionaries/pt.json](src/dictionaries/pt.json)
+- [src/dictionaries/en.json](src/dictionaries/en.json)
+
+### Seções
+
+Modifique [src/app/[locale]/(public)/page.tsx](<src/app/[locale]/(public)/page.tsx>)
+
+## 📁 Estrutura do Projeto
 
 ```
 src/
 ├── app/
-│   ├── globals.css                    # Tailwind v4 + shadcn theme
-│   ├── layout.tsx                     # Root layout (Geist font)
-│   ├── page.tsx                       # Home page (/)
-│   ├── api/auth/[...all]/route.ts     # Better Auth API handler
-│   ├── login/page.tsx                 # Login form (/login)
-│   ├── signup/page.tsx                # Signup form (/signup)
-│   ├── logout/page.tsx                # Sign out handler (/logout)
-│   └── dashboard/page.tsx             # Protected page (/dashboard)
+│   ├── [locale]/                      # Rotas com i18n
+│   │   ├── (public)/                  # Landing page
+│   │   │   └── page.tsx               # Página principal
+│   │   ├── layout.tsx                 # Layout com i18n
+│   │   ├── globals.css                # Estilos globais
+│   │   └── opengraph-image.tsx        # OG Image dinâmica
+│   ├── actions/
+│   │   └── send-email.ts              # Server action com rate limiting
+│   ├── layout.tsx                     # Root layout
+│   ├── sitemap.ts                     # Sitemap dinâmico
+│   └── robots.ts                      # Robots.txt
 ├── components/
-│   └── ui/                            # shadcn/ui components
-│       ├── button.tsx
-│       ├── card.tsx
-│       ├── input.tsx
-│       └── label.tsx
-├── helpers/
-│   ├── get-current-user.ts            # getCurrentUser() - server-side session
-│   └── require-auth.ts               # requireAuth() - redirect if unauthenticated
+│   ├── ui/                            # shadcn/ui components
+│   │   ├── scroll-reveal.tsx          # Animação Framer Motion
+│   │   └── ...
+│   ├── emails/
+│   │   └── contact-notification.tsx   # Template React Email
+│   ├── contact-form.tsx               # Formulário de contato
+│   ├── language-selector.tsx          # Seletor de idioma
+│   ├── navbar.tsx                     # Navbar com menu mobile
+│   ├── footer.tsx                     # Footer traduzido
+│   └── theme-provider.tsx             # Dark mode provider
+├── dictionaries/
+│   ├── pt.json                        # Traduções PT
+│   └── en.json                        # Traduções EN
+├── i18n/
+│   └── request.ts                     # Configuração next-intl
 ├── lib/
-│   ├── auth.ts                        # Better Auth server config
-│   ├── auth-client.ts                 # Better Auth client (for client components)
-│   └── utils.ts                       # cn() utility (clsx + tailwind-merge)
-├── middleware.ts                       # Route protection (cookie-based)
-└── __tests__/
-    ├── setup.ts                       # Test setup (@testing-library/jest-dom)
-    ├── components/button.test.tsx      # Button component tests
-    └── utils/cn.test.ts               # cn() utility tests
-e2e/
-└── smoke.spec.ts                      # E2E smoke test
+│   ├── validations/
+│   │   └── contact.ts                 # Schema Zod do formulário
+│   └── utils.ts                       # Utilities
+└── middleware.ts                      # i18n + auth middleware
 ```
 
-## Authentication
+## 🔐 Autenticação
 
-### How it works
+- **Better Auth** com PostgreSQL
+- Email/password authentication
+- Sessões com 7 dias de duração
+- Rate limiting: 100 req/min
+- Suporte para OAuth (GitHub, Google) - comentado
 
-Better Auth handles authentication server-side with sessions stored in PostgreSQL:
+## 📄 Licença
 
-- **Cookies**: HttpOnly, Secure (production), SameSite=Lax - JavaScript cannot access tokens
-- **Sessions**: Stored in PostgreSQL, validated server-side, 7-day expiry with 24h auto-refresh
-- **Passwords**: Hashed with scrypt (memory-hard, brute-force resistant)
-- **CSRF**: Multi-layer protection (Origin header, Content-Type, Fetch Metadata)
-- **Rate Limiting**: 100 req/60s general, 3 req/10s for sign-in endpoint
-- **Cookie Caching**: 5-minute cache to reduce database queries
+MIT
 
-### Route Protection
+## 🤝 Contribuindo
 
-Two layers of protection:
+1. Fork o projeto
+2. Crie uma branch (`git checkout -b feature/amazing-feature`)
+3. Commit (`git commit -m 'Add amazing feature'`)
+4. Push (`git push origin feature/amazing-feature`)
+5. Abra um Pull Request
 
-1. **Middleware** (`src/middleware.ts`): Fast cookie-based check using `getSessionCookie()`. Runs on the Edge Runtime without database calls. Redirects unauthenticated users from `/dashboard` to `/login`, and authenticated users from `/login`/`/signup` to `/dashboard`.
+---
 
-2. **Server-side helpers** (`src/helpers/`): Full session validation via `auth.api.getSession()` with database lookup. Used in Server Components for secure data access.
-
-### Helpers
-
-```typescript
-// Get session (returns null if not authenticated)
-import { getCurrentUser } from "@/helpers/get-current-user";
-const session = await getCurrentUser();
-
-// Require auth (redirects to /login if not authenticated)
-import { requireAuth } from "@/helpers/require-auth";
-const session = await requireAuth();
-```
-
-### Adding Social Providers
-
-1. Edit `src/lib/auth.ts` and uncomment the desired provider:
-
-```typescript
-socialProviders: {
-  github: {
-    clientId: process.env.GITHUB_CLIENT_ID!,
-    clientSecret: process.env.GITHUB_CLIENT_SECRET!,
-  },
-},
-```
-
-2. Add the corresponding environment variables to `.env`.
-
-3. Run migrations if needed: `pnpm dlx @better-auth/cli migrate`
-
-## PostgreSQL Setup
-
-Better Auth requires PostgreSQL for storing users and sessions.
-
-### Local development
-
-```bash
-# Create the database
-createdb boilerplate_dev
-
-# Set DATABASE_URL in .env
-DATABASE_URL=postgresql://your_user:your_password@localhost:5432/boilerplate_dev
-
-# Run migrations (creates user, session, account, verification tables)
-pnpm dlx @better-auth/cli migrate
-```
-
-### Production
-
-Set `DATABASE_URL` to your production PostgreSQL connection string. Better Auth will automatically use secure cookie settings (Secure flag, etc.) in production.
-
-## Adding shadcn/ui Components
-
-```bash
-pnpm dlx shadcn@latest add <component-name>
-```
-
-Components are installed as source code in `src/components/ui/`. Browse available components at [ui.shadcn.com](https://ui.shadcn.com).
-
-## Quality Tooling
-
-### Git Hooks (Husky)
-
-- **pre-commit**: Runs `lint-staged` (ESLint fix + Prettier on staged files)
-- **commit-msg**: Runs `commitlint` (enforces [Conventional Commits](https://www.conventionalcommits.org))
-
-### Commit Message Format
-
-```
-type(scope): description
-
-# Examples:
-feat(auth): add Google OAuth provider
-fix(dashboard): resolve session refresh issue
-docs: update README with deployment guide
-```
-
-### Testing
-
-- **Unit tests**: `pnpm test` (Vitest + React Testing Library)
-- **E2E tests**: `pnpm test:e2e` (Playwright with Chromium)
-
-The `PORT` environment variable can be used to change the E2E test server port:
-
-```bash
-PORT=3100 pnpm test:e2e
-```
-
-## Environment Variables
-
-| Variable                      | Required | Description                                                                                                                      |
-| ----------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `BETTER_AUTH_SECRET`          | Yes      | Signing key for cookies (min 32 chars). Generate with `openssl rand -base64 32`                                                  |
-| `BETTER_AUTH_URL`             | Yes      | Base URL of the application (e.g., `http://localhost:3000`)                                                                      |
-| `BETTER_AUTH_TRUSTED_ORIGINS` | No       | Comma-separated list of allowed origins (e.g., `http://localhost:3000,http://localhost:3001`). Useful when the dev port changes. |
-| `DATABASE_URL`                | Yes      | PostgreSQL connection string                                                                                                     |
-| `GITHUB_CLIENT_ID`            | No       | GitHub OAuth app client ID                                                                                                       |
-| `GITHUB_CLIENT_SECRET`        | No       | GitHub OAuth app client secret                                                                                                   |
-| `GOOGLE_CLIENT_ID`            | No       | Google OAuth client ID                                                                                                           |
-| `GOOGLE_CLIENT_SECRET`        | No       | Google OAuth client secret                                                                                                       |
-
-## Technical Decisions
-
-| Decision                           | Rationale                                                          |
-| ---------------------------------- | ------------------------------------------------------------------ |
-| PostgreSQL (not SQLite)            | Production-ready from day one; same database in dev and prod       |
-| Server-side sessions (not JWT)     | Tokens never exposed to client-side; immediate revocation possible |
-| `getSessionCookie()` in middleware | Fast Edge Runtime check without database calls                     |
-| `auth.api.getSession()` in helpers | Full server-side validation with database lookup                   |
-| Cookie caching (5 min)             | Performance optimization while maintaining revocation capability   |
-| Vitest (not Jest)                  | Faster, better DX, native ESM support                              |
-| Playwright (Chromium only)         | Lightweight for boilerplate; easy to add Firefox/WebKit            |
-| ESLint flat config + Prettier      | Current Next.js standard with consistent formatting                |
-| Tailwind CSS v4                    | CSS-first configuration, OKLCH colors, faster builds               |
+Desenvolvido com ❤️ pela AtlasBuild

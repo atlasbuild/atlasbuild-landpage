@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "title": "AtlasBuild - Codificamos o Futuro: Blockchain, IA e Sistemas de Alta Performance",
+    "description": "Da automação inteligente com RAG à segurança da Blockchain. Construímos soluções robustas e escaláveis sob medida para o seu negócio.",
+    "keywords": "blockchain, desenvolvimento blockchain, smart contracts, NFT, IA generativa, RAG, inteligência artificial, sistemas de pagamento, integração APIs, automação n8n, desenvolvimento software, fábrica de software"
+  },
+  "nav": {
+    "features": "Expertise",
+    "process": "Processo",
+    "contact": "Contato"
+  },
+  "notFound": {
+    "title": "Página Não Encontrada",
+    "description": "A página que você está procurando não existe ou foi movida.",
+    "backHome": "Voltar ao Início"
+  },
+  "hero": {
+    "badge": "🚀 Elite Software Factory",
+    "headline": "Codificamos o Futuro",
+    "headlineGradient": "Blockchain, IA e Sistemas de Alta Performance",
+    "subheadline": "Da automação inteligente com RAG à segurança da Blockchain. Construímos soluções robustas e escaláveis sob medida para o seu negócio.",
+    "ctaPrimary": "Falar com Especialista",
+    "ctaSecondary": "Ver Nossos Projetos"
+  },
+  "expertise": {
+    "title": "Nossa Expertise Técnica",
+    "subtitle": "Dominamos as tecnologias mais avançadas do mercado",
+    "cards": [
+      {
+        "title": "Blockchain & NFTs",
+        "description": "Smart contracts, tokenização de ativos e plataformas descentralizadas com Solidity, Web3 e Polygon."
+      },
+      {
+        "title": "Sistemas de Pagamentos",
+        "description": "Integração completa com gateways, PIX, carteiras digitais e soluções white-label de alta disponibilidade."
+      },
+      {
+        "title": "Integrações Customizadas",
+        "description": "APIs robustas, webhooks, sincronização de dados e automações complexas entre sistemas legados e modernos."
+      },
+      {
+        "title": "Sistemas End-to-End",
+        "description": "Da arquitetura ao deploy. Microsserviços escaláveis, CI/CD, monitoramento 24/7 e infraestrutura cloud-native."
+      }
+    ]
+  },
+  "tech": {
+    "title": "IA e Automação de Ponta",
+    "subtitle": "Transformamos processos complexos em fluxos inteligentes",
+    "cards": [
+      {
+        "title": "IA Generativa",
+        "description": "Implementação de LLMs customizados (GPT-4, Claude, LLaMA) para atendimento, análise de dados e geração de conteúdo."
+      },
+      {
+        "title": "RAG (Retrieval-Augmented Generation)",
+        "description": "Bases de conhecimento privadas com embeddings e busca vetorial. IA que aprende com seus documentos internos."
+      },
+      {
+        "title": "Automações com n8n",
+        "description": "Workflows complexos sem código. Integrações entre Slack, CRM, ERP, e-mail, bancos de dados e APIs externas."
+      }
+    ]
+  },
+  "process": {
+    "title": "Nosso Processo de Trabalho",
+    "subtitle": "Da ideia ao lançamento, com transparência total",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Discovery & Alinhamento",
+        "description": "Entendemos a fundo seu desafio de negócio, requisitos técnicos e objetivos estratégicos."
+      },
+      {
+        "number": "02",
+        "title": "Arquitetura & Prototipagem",
+        "description": "Desenhamos a solução ideal: stack tecnológica, fluxos de dados, wireframes e estimativas precisas."
+      },
+      {
+        "number": "03",
+        "title": "Desenvolvimento Ágil",
+        "description": "Sprints de 2 semanas com entregas contínuas. Code review rigoroso, testes automatizados e CI/CD desde o dia 1."
+      },
+      {
+        "number": "04",
+        "title": "Deploy & Suporte",
+        "description": "Infraestrutura cloud escalável, monitoramento em tempo real e suporte técnico especializado pós-lançamento."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Vamos Construir Algo Incrível Juntos",
+    "subtitle": "Conte-nos sobre seu projeto e receba uma proposta personalizada",
+    "form": {
+      "name": "Nome completo",
+      "namePlaceholder": "Seu nome",
+      "email": "E-mail profissional",
+      "emailPlaceholder": "seu@email.com",
+      "company": "Empresa",
+      "companyPlaceholder": "Nome da sua empresa",
+      "phone": "Celular / WhatsApp (opcional)",
+      "phonePlaceholder": "+55 (11) 99999-9999",
+      "description": "Descreva seu projeto ou necessidade",
+      "descriptionPlaceholder": "Conte-nos sobre seu desafio técnico, objetivos e prazos...",
+      "submit": "Enviar Proposta",
+      "submitting": "Enviando...",
+      "success": "✓ Mensagem enviada! Retornaremos em até 24h.",
+      "error": "Erro ao enviar mensagem. Tente novamente."
+    },
+    "validation": {
+      "nameRequired": "Nome é obrigatório",
+      "nameMin": "Nome deve ter pelo menos 2 caracteres",
+      "emailRequired": "E-mail é obrigatório",
+      "emailInvalid": "E-mail inválido",
+      "companyRequired": "Empresa é obrigatória",
+      "companyMin": "Nome da empresa deve ter pelo menos 2 caracteres",
+      "descriptionRequired": "Descrição é obrigatória",
+      "descriptionMin": "Descrição deve ter pelo menos 10 caracteres",
+      "descriptionMax": "Descrição deve ter no máximo 1000 caracteres",
+      "phoneMin": "Telefone deve ter pelo menos 10 dígitos",
+      "phoneMax": "Telefone deve ter no máximo 20 dígitos"
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "Sobre",
+      "description": "Fábrica de software especializada em Blockchain, IA e sistemas de alta performance."
+    },
+    "services": {
+      "title": "Serviços",
+      "blockchain": "Blockchain & Web3",
+      "ai": "IA & Machine Learning",
+      "payments": "Sistemas de Pagamento",
+      "integrations": "Integrações",
+      "automation": "Automação"
+    },
+    "company": {
+      "title": "Empresa",
+      "about": "Sobre Nós",
+      "process": "Processo",
+      "contact": "Contato",
+      "careers": "Carreiras"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacidade",
+      "terms": "Termos de Uso"
+    },
+    "copyright": "© 2026 AtlasBuild. Todos os direitos reservados."
+  }
+}
