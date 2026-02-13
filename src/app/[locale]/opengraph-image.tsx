@@ -17,6 +17,7 @@ export default async function Image({
   const { locale } = await params;
   const messages = await getMessages({ locale });
   const hero = messages.hero as {
+    badge: string;
     headline: string;
     headlineGradient: string;
     subheadline: string;
