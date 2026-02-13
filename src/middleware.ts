@@ -1,13 +1,8 @@
 import createMiddleware from "next-intl/middleware";
-import { locales } from "./i18n";
+import { routing } from "./i18n/routing";
 
 // Simple i18n middleware - no authentication needed for landing page
-export default createMiddleware({
-  locales,
-  defaultLocale: "en",
-  localeDetection: true,
-  localePrefix: "always",
-});
+export default createMiddleware(routing);
 
 export const config = {
   matcher: [

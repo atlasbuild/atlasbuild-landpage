@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { locales } from "@/i18n";
+import { routing } from "@/i18n/routing";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3002";
@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
-  for (const locale of locales) {
+  for (const locale of routing.locales) {
     for (const route of routes) {
       sitemapEntries.push({
         url: `${baseUrl}/${locale}${route}`,
@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: route === "" ? 1.0 : 0.8,
         alternates: {
           languages: Object.fromEntries(
-            locales.map((l) => [l, `${baseUrl}/${l}${route}`]),
+            routing.locales.map((l) => [l, `${baseUrl}/${l}${route}`]),
           ),
         },
       });

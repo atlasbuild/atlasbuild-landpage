@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales } from "@/i18n";
+import { routing } from "@/i18n/routing";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export default function RootLayout({

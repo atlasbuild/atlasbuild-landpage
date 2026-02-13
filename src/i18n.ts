@@ -1,19 +1,18 @@
-import { notFound } from "next/navigation";
 import { getRequestConfig } from "next-intl/server";
+import { routing } from "./i18n/routing";
 
-export const locales = ["pt", "en"] as const;
-export type Locale = (typeof locales)[number];
+export default getRequestConfig(
+  async ({ requestLocale }: { requestLocale: Promise<string | undefined> }) => {
+    let locale = await requestLocale;
 
-export default getRequestConfig(async ({ requestLocale }) => {
-  let locale = await requestLocale;
+    // Ensure that a valid locale is used
+    if (!locale || !routing.locales.includes(locale as "pt" | "en")) {
+      locale = routing.defaultLocale;
+    }
 
-  // Validate that the incoming `locale` parameter is valid
-  if (!locale || !locales.includes(locale as Locale)) {
-    locale = "en"; // Default fallback
-  }
-
-  return {
-    locale,
-    messages: (await import(`@/dictionaries/${locale}.json`)).default,
-  };
-});
+    return {
+      locale,
+      messages: (await import(`@/dictionaries/${locale}.json`)).default,
+    };
+  },
+);

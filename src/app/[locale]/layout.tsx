@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { locales } from "@/i18n";
+import { routing } from "@/i18n/routing";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "@/components/ui/sonner";
@@ -42,7 +42,7 @@ export async function generateMetadata({
       description: metadata.description,
       type: "website",
       locale: locale,
-      alternateLocale: locales.filter((l) => l !== locale),
+      alternateLocale: routing.locales.filter((l) => l !== locale),
     },
     twitter: {
       card: "summary_large_image",
@@ -69,7 +69,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   // Ensure that the incoming `locale` is valid
-  if (!locales.includes(locale as "pt" | "en")) {
+  if (!routing.locales.includes(locale as "pt" | "en")) {
     notFound();
   }
 
