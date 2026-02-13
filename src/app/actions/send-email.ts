@@ -59,9 +59,9 @@ export async function sendContactEmail(data: ContactFormData) {
       };
     }
 
-    // Send email using Resend
+    // Send email using Resend with React Email component
     const { error } = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL || "contato@atlasbuild.com",
+      from: process.env.RESEND_FROM_EMAIL || "contato@atlasbuild.io",
       to: recipientEmails,
       subject: `Novo Contato: ${validated.name} - ${validated.company}`,
       react: ContactNotificationEmail({
