@@ -59,7 +59,11 @@ export function Navbar() {
           {mounted ? (
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="sm">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  aria-label="Open navigation menu"
+                >
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
@@ -69,7 +73,7 @@ export function Navbar() {
                     AtlasBuild
                   </SheetTitle>
                 </SheetHeader>
-                <div className="mt-8 flex flex-col gap-4">
+                <div className="mt-6 flex flex-col gap-4 px-4">
                   {navItems.map((item) => (
                     <Link
                       key={item.href}
@@ -87,7 +91,13 @@ export function Navbar() {
               </SheetContent>
             </Sheet>
           ) : (
-            <Button variant="ghost" size="sm" aria-hidden>
+            <Button
+              variant="ghost"
+              size="sm"
+              aria-label="Open navigation menu"
+              disabled
+              aria-hidden
+            >
               <Menu className="h-5 w-5" />
             </Button>
           )}

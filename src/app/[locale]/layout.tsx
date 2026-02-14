@@ -67,6 +67,7 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const isVercelDeployment = process.env.VERCEL === "1";
 
   // Ensure that the incoming `locale` is valid
   if (!routing.locales.includes(locale as "pt" | "en")) {
@@ -140,8 +141,8 @@ export default async function LocaleLayout({
           >
             {children}
             <Toaster />
-            <Analytics />
-            <SpeedInsights />
+            {isVercelDeployment && <Analytics />}
+            {isVercelDeployment && <SpeedInsights />}
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

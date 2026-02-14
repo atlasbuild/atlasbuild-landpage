@@ -146,7 +146,7 @@ export function ContactForm() {
         type="submit"
         size="lg"
         disabled={isSubmitting}
-        className="glow-purple w-full md:w-auto"
+        className="glow-purple w-full bg-violet-700 text-white hover:bg-violet-600 md:w-auto"
       >
         {isSubmitting ? (
           <>

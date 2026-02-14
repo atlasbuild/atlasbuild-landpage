@@ -22,6 +22,8 @@ export function LanguageSelector() {
   const router = useRouter();
   const pathname = usePathname();
   const mounted = useHasMounted();
+  const selectLanguageLabel =
+    locale === "pt" ? "Selecionar idioma" : "Select language";
 
   const handleLanguageChange = (newLocale: string) => {
     // Remove current locale from pathname
@@ -47,7 +49,10 @@ export function LanguageSelector() {
 
   return (
     <Select value={locale} onValueChange={handleLanguageChange}>
-      <SelectTrigger className="glass w-[140px]">
+      <SelectTrigger
+        className="glass w-[140px]"
+        aria-label={selectLanguageLabel}
+      >
         <div className="flex items-center gap-2">
           <Languages className="h-4 w-4" />
           <SelectValue>

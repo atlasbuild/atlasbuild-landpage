@@ -1,4 +1,4 @@
-# AtlasBuild - Elite Software Factory Landing Page
+# AtlasBuild - Software Factory Landing Page
 
 Landing page profissional para fábrica de software especializada em Blockchain, IA e sistemas de alta performance. Desenvolvida com Next.js 16, Tailwind CSS v4 e next-intl para suporte bilíngue (PT/EN).
 

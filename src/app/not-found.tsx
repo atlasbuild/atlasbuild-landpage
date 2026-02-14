@@ -12,7 +12,10 @@ export default function RootNotFound() {
       <p className="text-muted-foreground">
         The page you are looking for does not exist or has been moved.
       </p>
-      <Button asChild className="glow-purple">
+      <Button
+        asChild
+        className="glow-purple bg-violet-700 text-white hover:bg-violet-600"
+      >
         <Link href={`/${routing.defaultLocale}`}>Back to Home</Link>
       </Button>
     </main>

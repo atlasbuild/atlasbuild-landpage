@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { getMessages } from "next-intl/server";
 
 export const runtime = "edge";
-export const alt = "AtlasBuild - Elite Software Factory";
+export const alt = "AtlasBuild - Software Factory";
 export const size = {
   width: 1200,
   height: 630,

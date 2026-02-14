@@ -1,5 +1,3 @@
-"use client";
-
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import {
@@ -15,7 +13,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { ContactForm } from "@/components/contact-form";
 
@@ -36,7 +33,7 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden px-6 py-24 sm:py-32 lg:py-40">
         {/* Gradient Orbs Background */}
@@ -65,7 +62,11 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Button asChild size="lg" className="glow-purple text-base">
+              <Button
+                asChild
+                size="lg"
+                className="glow-purple bg-violet-700 text-base text-white hover:bg-violet-600"
+              >
                 <Link href="#contact">
                   {t("hero.ctaPrimary")}
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -114,7 +115,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Separator className="mx-auto w-11/12 max-w-7xl opacity-20" />
+      <div
+        aria-hidden
+        className="bg-border mx-auto h-px w-11/12 max-w-7xl opacity-20"
+      />
 
       {/* Tech Differential Section */}
       <section id="tech" className="px-6 py-20 sm:py-28">
@@ -148,7 +152,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Separator className="mx-auto w-11/12 max-w-7xl opacity-20" />
+      <div
+        aria-hidden
+        className="bg-border mx-auto h-px w-11/12 max-w-7xl opacity-20"
+      />
 
       {/* Process Section */}
       <section id="process" className="px-6 py-20 sm:py-28">
@@ -208,6 +215,6 @@ export default function HomePage() {
           </ScrollReveal>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
