@@ -1,15 +1,42 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { routing } from "@/i18n/routing";
 
-const appBaseUrl =
-  process.env.NEXT_PUBLIC_APP_URL ||
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "http://localhost:3000");
+function getFallbackBaseUrl() {
+  if (process.env.NEXT_PUBLIC_APP_URL) {
+    return process.env.NEXT_PUBLIC_APP_URL;
+  }
 
-export const metadata: Metadata = {
-  metadataBase: new URL(appBaseUrl),
-};
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  }
+
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+
+  return "http://localhost:3000";
+}
+
+async function getMetadataBaseUrl() {
+  const headersList = await headers();
+  const host = headersList.get("x-forwarded-host") ?? headersList.get("host");
+  const forwardedProto = headersList.get("x-forwarded-proto");
+
+  if (host) {
+    const protocol =
+      forwardedProto ?? (host.includes("localhost") ? "http" : "https");
+    return new URL(`${protocol}://${host}`);
+  }
+
+  return new URL(getFallbackBaseUrl());
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    metadataBase: await getMetadataBaseUrl(),
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
