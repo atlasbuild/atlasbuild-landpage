@@ -59,7 +59,7 @@ export function ContactForm() {
             id="name"
             placeholder={t("form.namePlaceholder")}
             {...register("name")}
-            className="glass focus:border-primary focus:ring-primary border-white/20"
+            className="glass focus:border-primary focus:ring-primary border-border/70"
           />
           {errors.name && (
             <p className="text-destructive text-sm">
@@ -77,7 +77,7 @@ export function ContactForm() {
             type="email"
             placeholder={t("form.emailPlaceholder")}
             {...register("email")}
-            className="glass focus:border-primary focus:ring-primary border-white/20"
+            className="glass focus:border-primary focus:ring-primary border-border/70"
           />
           {errors.email && (
             <p className="text-destructive text-sm">
@@ -96,7 +96,7 @@ export function ContactForm() {
             id="company"
             placeholder={t("form.companyPlaceholder")}
             {...register("company")}
-            className="glass focus:border-primary focus:ring-primary border-white/20"
+            className="glass focus:border-primary focus:ring-primary border-border/70"
           />
           {errors.company && (
             <p className="text-destructive text-sm">
@@ -114,7 +114,7 @@ export function ContactForm() {
             type="tel"
             placeholder={t("form.phonePlaceholder")}
             {...register("phone")}
-            className="glass focus:border-primary focus:ring-primary border-white/20"
+            className="glass focus:border-primary focus:ring-primary border-border/70"
           />
           {errors.phone && (
             <p className="text-destructive text-sm">
@@ -133,7 +133,7 @@ export function ContactForm() {
           rows={5}
           placeholder={t("form.descriptionPlaceholder")}
           {...register("description")}
-          className="glass bg-card/50 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary flex min-h-[120px] w-full rounded-md border border-white/20 px-3 py-2 text-sm focus:ring-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+          className="glass bg-card/50 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary border-border/70 flex min-h-[120px] w-full rounded-md border px-3 py-2 text-sm focus:ring-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
         />
         {errors.description && (
           <p className="text-destructive text-sm">

@@ -45,7 +45,7 @@ export default function HomePage() {
 
         <div className="mx-auto max-w-7xl">
           <ScrollReveal className="text-center">
-            <Badge className="mb-6 border-white/20 bg-white/5 px-4 py-1.5 text-sm backdrop-blur-sm">
+            <Badge className="border-border/60 bg-card/80 text-foreground mb-6 px-4 py-1.5 text-sm backdrop-blur-sm">
               {t("hero.badge")}
             </Badge>
 
@@ -76,7 +76,7 @@ export default function HomePage() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="glass border-white/20 text-base"
+                className="glass text-base"
               >
                 <Link href="#expertise">{t("hero.ctaSecondary")}</Link>
               </Button>
@@ -175,7 +175,7 @@ export default function HomePage() {
                 <div className="glass relative flex flex-col gap-6 rounded-xl p-8 md:flex-row md:items-start">
                   {/* Step Number */}
                   <div className="flex-shrink-0">
-                    <div className="bg-gradient-purple-cyan flex h-16 w-16 items-center justify-center rounded-full text-2xl font-bold text-white shadow-lg">
+                    <div className="gradient-purple-cyan flex h-16 w-16 items-center justify-center rounded-full text-2xl font-bold text-white shadow-lg">
                       {t(`process.steps.${index}.number`)}
                     </div>
                   </div>

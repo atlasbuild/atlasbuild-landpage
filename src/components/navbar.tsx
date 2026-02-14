@@ -28,7 +28,7 @@ export function Navbar() {
   ];
 
   return (
-    <header className="glass sticky top-0 z-50 w-full border-b border-white/10">
+    <header className="glass border-border/60 sticky top-0 z-50 w-full border-b">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Link href="/" className="text-xl font-bold tracking-tight">
           <span className="text-gradient-purple-cyan">AtlasBuild</span>
@@ -84,7 +84,7 @@ export function Navbar() {
                       {item.label}
                     </Link>
                   ))}
-                  <div className="border-t border-white/10 pt-4">
+                  <div className="border-border/60 border-t pt-4">
                     <LanguageSelector />
                   </div>
                 </div>

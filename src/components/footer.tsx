@@ -5,7 +5,7 @@ export function Footer() {
   const t = useTranslations("footer");
 
   return (
-    <footer className="glass border-t border-white/10">
+    <footer className="glass border-border/60 border-t">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-3">
           <h3 className="text-xl font-bold">
@@ -93,7 +93,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="text-muted-foreground border-t border-white/10 py-6 text-center text-sm">
+      <div className="text-muted-foreground border-border/60 border-t py-6 text-center text-sm">
         {t("copyright")}
       </div>
     </footer>

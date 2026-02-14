@@ -128,11 +128,11 @@
 @layer utilities {
   /* Glassmorphism effect */
   .glass {
-    @apply bg-card/70 border border-white/10 backdrop-blur-md;
+    @apply bg-card/70 border-border/60 border backdrop-blur-md;
   }
 
   .glass-strong {
-    @apply bg-card/80 border border-white/15 backdrop-blur-lg;
+    @apply bg-card/80 border-border/70 border backdrop-blur-lg;
   }
 
   /* Glow effects for CTAs */
