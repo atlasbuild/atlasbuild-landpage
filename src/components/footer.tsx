@@ -91,28 +91,6 @@ export function Footer() {
             </li>
           </ul>
         </div>
-
-        <div className="space-y-3">
-          <h4 className="text-sm font-semibold">{t("legal.title")}</h4>
-          <ul className="text-muted-foreground space-y-2 text-sm">
-            <li>
-              <Link
-                href="/privacy"
-                className="hover:text-foreground transition-colors"
-              >
-                {t("legal.privacy")}
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/terms"
-                className="hover:text-foreground transition-colors"
-              >
-                {t("legal.terms")}
-              </Link>
-            </li>
-          </ul>
-        </div>
       </div>
 
       <div className="text-muted-foreground border-t border-white/10 py-6 text-center text-sm">
