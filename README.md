@@ -146,6 +146,18 @@ vercel
 
 Configurar variáveis de ambiente no dashboard da Vercel.
 
+#### Checklist de Verificação de Deploy (NOT_FOUND / DEPLOYMENT_NOT_FOUND)
+
+1. Em **Project > Deployments**, promova o último deploy estável para produção.
+2. Em **Project > Domains**, confirme que existe um domínio ativo ligado ao projeto.
+3. Em **Project > Settings > Environment Variables**, configure `NEXT_PUBLIC_APP_URL` com o domínio de produção exato (ex: `https://seu-dominio.com` ou `https://atlasbuild-landpage.vercel.app`).
+4. Faça um novo deploy após alterar variáveis de ambiente.
+5. Valide as rotas em produção:
+   - `/` redireciona para `/en`
+   - `/en` responde `200`
+   - `/pt` responde `200`
+   - `/es` mostra página 404 da aplicação (não erro de deploy da Vercel)
+
 ### Outras Plataformas
 
 O projeto é compatível com qualquer plataforma que suporte Next.js 16+:

@@ -1,13 +1,31 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("Smoke tests", () => {
-  test("home page loads and can navigate to login", async ({ page }) => {
+  test("root redirects to default locale (/en)", async ({ page }) => {
     await page.goto("/");
-    await expect(page).toHaveTitle(/Boilerplate/i);
+    await expect(page).toHaveURL(/\/en\/?$/);
+    await expect(page).toHaveTitle(/AtlasBuild/i);
+  });
 
-    await page.getByRole("link", { name: /log in/i }).click();
+  test("localized routes respond with 200", async ({ page }) => {
+    const enResponse = await page.goto("/en");
+    expect(enResponse?.status()).toBe(200);
+    await expect(page).toHaveURL(/\/en\/?$/);
 
-    await expect(page).toHaveURL(/\/login/);
-    await expect(page.getByText("Enter your credentials")).toBeVisible();
+    const ptResponse = await page.goto("/pt");
+    expect(ptResponse?.status()).toBe(200);
+    await expect(page).toHaveURL(/\/pt\/?$/);
+  });
+
+  test("invalid locale-like path shows app 404 page", async ({ page }) => {
+    const response = await page.goto("/es");
+
+    expect(response?.status()).toBe(404);
+    await expect(
+      page.getByRole("heading", { level: 1, name: "404" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: /Back to Home|Voltar ao Início/i }),
+    ).toBeVisible();
   });
 });
